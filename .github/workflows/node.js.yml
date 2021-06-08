@@ -45,6 +45,5 @@ jobs:
         script: |
           cd ~/sum-api
           git pull origin master
-          export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          npm install
-          pm2 restart sum-api
+          /home/ubuntu/.nvm/versions/node/v14.17.0/bin/npm install
+          /home/ubuntu/.nvm/versions/node/v14.17.0/bin/pm2 restart sum-api

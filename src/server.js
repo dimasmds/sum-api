@@ -1,5 +1,6 @@
 const Hapi = require('@hapi/hapi');
 const sum = require('./sum');
+const minus = require('./minus');
 
 const init = async () => {
   const server = Hapi.server({
@@ -19,6 +20,19 @@ const init = async () => {
       };
     }
   });
+
+  server.route({
+    method: 'GET',
+    path: '/minus/{a}/{b}',
+    handler: async (request) => {
+      const { a, b } = request.params;
+      const result = minus(Number(a), Number(b));
+
+      return {
+        result,
+      }
+    }
+  })
 
   await server.start();
   console.log(`server start At ${server.info.uri}`);

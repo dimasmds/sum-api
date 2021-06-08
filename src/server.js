@@ -21,7 +21,7 @@ const init = async () => {
   });
 
   await server.start();
-  console.log(`server start at ${server.info.uri}`);
+  console.log(`server start At ${server.info.uri}`);
 }
 
 init();
